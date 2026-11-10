@@ -1,0 +1,131 @@
+{
+  "updatedAt": "2026-11-10T20:31:09.413Z",
+  "createdAt": "2026-11-10T20:31:09.413Z",
+  "id": "KS1tDBYWj5RNfvE1",
+  "name": "flow-09-redis",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a9000001-0000-4000-8000-000000000001",
+      "name": "When clicking 'Execute workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -80,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "keyType": "string",
+        "key": "kunda",
+        "value": "{\"payload\":\"Kunda\",\"group\":\"УИР-241\",\"topic\":\"lab4/kunda/redis\",\"savedAt\":\"2026-11-10\"}",
+        "valueIsJSON": true,
+        "expire": false
+      },
+      "id": "c9000001-0000-4000-8000-000000000001",
+      "name": "Redis Set (kunda)",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        160,
+        300
+      ],
+      "credentials": {
+        "redis": {
+          "id": "s7Axq0vEn30su9RL",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "kunda",
+        "key": "kunda",
+        "keyType": "string"
+      },
+      "id": "d9000001-0000-4000-8000-000000000001",
+      "name": "Redis Get (kunda)",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        420,
+        300
+      ],
+      "credentials": {
+        "redis": {
+          "id": "s7Axq0vEn30su9RL",
+          "name": "Redis account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Redis Set (kunda)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Set (kunda)": {
+      "main": [
+        [
+          {
+            "node": "Redis Get (kunda)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "04d3fbd7-6cc4-41d2-82ec-9bf6ad30b7f2",
+  "activeVersionId": null,
+  "versionCounter": 1,
+  "triggerCount": 0,
+  "sourceWorkflowId": null,
+  "tags": [],
+  "shared": [
+    {
+      "updatedAt": "2026-11-10T20:31:09.414Z",
+      "createdAt": "2026-11-10T20:31:09.414Z",
+      "role": "workflow:owner",
+      "workflowId": "KS1tDBYWj5RNfvE1",
+      "projectId": "zcEt2SWAgqRocx45",
+      "project": {
+        "updatedAt": "2026-11-10T20:24:31.375Z",
+        "createdAt": "2026-11-10T20:23:29.003Z",
+        "id": "zcEt2SWAgqRocx45",
+        "name": "Иван Кунда <kunda_iv_24@mf.grsu.by>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "ce039401-8cc7-4312-81d8-6c1b854b3cc8"
+      }
+    }
+  ],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

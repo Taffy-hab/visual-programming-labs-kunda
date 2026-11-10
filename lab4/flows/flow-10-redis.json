@@ -1,0 +1,151 @@
+{
+  "updatedAt": "2026-11-10T20:31:09.415Z",
+  "createdAt": "2026-11-10T20:31:09.415Z",
+  "id": "tyDuzbW89GPahArY",
+  "name": "flow-10-redis",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a1000001-0000-4000-8000-000000000a01",
+      "name": "When clicking 'Execute workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "keyType": "string",
+        "key": "kunda"
+      },
+      "id": "c1000001-0000-4000-8000-000000000a01",
+      "name": "Redis Delete (kunda)",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        140,
+        300
+      ],
+      "credentials": {
+        "redis": {
+          "id": "s7Axq0vEn30su9RL",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "keys",
+        "keyPattern": "kunda"
+      },
+      "id": "d1000001-0000-4000-8000-000000000a01",
+      "name": "Redis Keys (kunda)",
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        400,
+        300
+      ],
+      "credentials": {
+        "redis": {
+          "id": "s7Axq0vEn30su9RL",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ЛР4, п.3: проверяем, что ключ kunda действительно удалён.\n// В узле Redis в n8n нет операции EXISTS, поэтому используем KEYS:\n// если ключ существует, он попадёт в список; если удалён — список пуст.\nconst items = $input\n  .all()\n  .map((i) => i.json)\n  .filter((o) => o && Object.keys(o).length > 0);\n\nconst exists = items.length > 0;\n\nreturn {\n  json: {\n    checkedKey: 'kunda',\n    exists,\n    keysFound: items,\n    conclusion: exists ? 'ключ ещё существует (EXISTS = 1)' : 'ключ удалён, EXISTS = 0',\n    student: 'Kunda',\n    group: 'УИР-241',\n  },\n};"
+      },
+      "id": "e1000001-0000-4000-8000-000000000a01",
+      "name": "Code (exists check)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Redis Delete (kunda)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Delete (kunda)": {
+      "main": [
+        [
+          {
+            "node": "Redis Keys (kunda)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis Keys (kunda)": {
+      "main": [
+        [
+          {
+            "node": "Code (exists check)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "ae150295-39aa-4aa4-bcd3-890dcd1c56f7",
+  "activeVersionId": null,
+  "versionCounter": 2,
+  "triggerCount": 0,
+  "sourceWorkflowId": null,
+  "tags": [],
+  "shared": [
+    {
+      "updatedAt": "2026-11-10T20:31:09.416Z",
+      "createdAt": "2026-11-10T20:31:09.416Z",
+      "role": "workflow:owner",
+      "workflowId": "tyDuzbW89GPahArY",
+      "projectId": "zcEt2SWAgqRocx45",
+      "project": {
+        "updatedAt": "2026-11-10T20:24:31.375Z",
+        "createdAt": "2026-11-10T20:23:29.003Z",
+        "id": "zcEt2SWAgqRocx45",
+        "name": "Иван Кунда <kunda_iv_24@mf.grsu.by>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "ce039401-8cc7-4312-81d8-6c1b854b3cc8"
+      }
+    }
+  ],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}
