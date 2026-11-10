@@ -1,0 +1,113 @@
+{
+  "updatedAt": "2026-11-10T20:31:09.410Z",
+  "createdAt": "2026-11-10T20:31:09.410Z",
+  "id": "5DD7fSlxtsf877PH",
+  "name": "flow-05-http",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a5000001-0000-4000-8000-000000000001",
+      "name": "When clicking 'Execute workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://catfact.ninja/fact",
+        "options": {}
+      },
+      "id": "c5000001-0000-4000-8000-000000000001",
+      "name": "HTTP Request (catfact)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ЛР4, п.2.5: разбираем ответ HTTP Request\nconst response = $input.first().json;\n\nconsole.log('Ответ catfact.ninja:', JSON.stringify(response));\n\nconst fact =\n  response.fact ||\n  response.text ||\n  response.data?.fact ||\n  (typeof response === 'string' ? response : JSON.stringify(response));\n\nreturn {\n  json: {\n    source: 'https://catfact.ninja/fact',\n    fact,\n    length: response.length ?? fact.length,\n    raw: response,\n    student: 'Kunda',\n    group: 'УИР-241',\n  },\n};"
+      },
+      "id": "d5000001-0000-4000-8000-000000000001",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        420,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request (catfact)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request (catfact)": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "102ee8d3-5cd0-419a-b829-834905032d19",
+  "activeVersionId": null,
+  "versionCounter": 2,
+  "triggerCount": 0,
+  "sourceWorkflowId": null,
+  "tags": [],
+  "shared": [
+    {
+      "updatedAt": "2026-11-10T20:31:09.410Z",
+      "createdAt": "2026-11-10T20:31:09.410Z",
+      "role": "workflow:owner",
+      "workflowId": "5DD7fSlxtsf877PH",
+      "projectId": "zcEt2SWAgqRocx45",
+      "project": {
+        "updatedAt": "2026-11-10T20:24:31.375Z",
+        "createdAt": "2026-11-10T20:23:29.003Z",
+        "id": "zcEt2SWAgqRocx45",
+        "name": "Иван Кунда <kunda_iv_24@mf.grsu.by>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "ce039401-8cc7-4312-81d8-6c1b854b3cc8"
+      }
+    }
+  ],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

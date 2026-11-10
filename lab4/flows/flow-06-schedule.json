@@ -1,0 +1,97 @@
+{
+  "updatedAt": "2026-11-10T20:31:09.412Z",
+  "createdAt": "2026-11-10T20:31:09.412Z",
+  "id": "1zZU4l6bMKTp68Er",
+  "name": "flow-06-schedule",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "*/5 * * * *"
+            }
+          ]
+        }
+      },
+      "id": "a6000001-0000-4000-8000-000000000001",
+      "name": "Schedule Trigger (every 5 min)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        -60,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ЛР4, п.2.6: возвращаем текущее время\nconst now = new Date();\n\nconsole.log('Тик расписания:', now.toISOString());\n\nreturn {\n  json: {\n    currentTime: now.toISOString(),\n    localTime: now.toLocaleString('ru-RU', { timeZone: 'Europe/Minsk' }),\n    timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,\n    unix: Math.floor(now.getTime() / 1000),\n    schedule: '*/5 * * * *',\n    payload: 'Kunda',\n    group: 'УИР-241',\n  },\n};"
+      },
+      "id": "d6000001-0000-4000-8000-000000000001",
+      "name": "Code (current time)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "Schedule Trigger (every 5 min)": {
+      "main": [
+        [
+          {
+            "node": "Code (current time)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "ef9e1a20-b456-46e2-8e75-a2a6141e16f3",
+  "activeVersionId": null,
+  "versionCounter": 1,
+  "triggerCount": 0,
+  "sourceWorkflowId": null,
+  "tags": [],
+  "shared": [
+    {
+      "updatedAt": "2026-11-10T20:31:09.412Z",
+      "createdAt": "2026-11-10T20:31:09.412Z",
+      "role": "workflow:owner",
+      "workflowId": "1zZU4l6bMKTp68Er",
+      "projectId": "zcEt2SWAgqRocx45",
+      "project": {
+        "updatedAt": "2026-11-10T20:24:31.375Z",
+        "createdAt": "2026-11-10T20:23:29.003Z",
+        "id": "zcEt2SWAgqRocx45",
+        "name": "Иван Кунда <kunda_iv_24@mf.grsu.by>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "ce039401-8cc7-4312-81d8-6c1b854b3cc8"
+      }
+    }
+  ],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

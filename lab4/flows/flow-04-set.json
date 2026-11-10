@@ -1,0 +1,134 @@
+{
+  "updatedAt": "2026-11-10T20:31:09.408Z",
+  "createdAt": "2026-11-10T20:31:09.408Z",
+  "id": "w9U9cbKBJJVuz5vR",
+  "name": "flow-04-set",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a4000001-0000-4000-8000-000000000001",
+      "name": "When clicking 'Execute workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b4000001-0000-4000-8000-000000000001",
+              "name": "topic",
+              "value": "lab4/kunda/set",
+              "type": "string"
+            },
+            {
+              "id": "b4000001-0000-4000-8000-000000000002",
+              "name": "timestamp",
+              "value": "={{ $now.toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "b4000001-0000-4000-8000-000000000003",
+              "name": "payload",
+              "value": "Kunda",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c4000001-0000-4000-8000-000000000001",
+      "name": "Set message",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ЛР4, п.2.4: показываем полный объект сообщения, пришедший от Set\nconst message = $input.first().json;\n\nconsole.log('Полный объект сообщения:');\nconsole.log(JSON.stringify(message, null, 2));\n\nreturn {\n  json: {\n    fullMessage: message,\n    fieldNames: Object.keys(message),\n    topic: message.topic,\n    payload: message.payload,\n    timestamp: message.timestamp,\n    group: 'УИР-241',\n  },\n};"
+      },
+      "id": "d4000001-0000-4000-8000-000000000001",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Set message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set message": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "2581eeb2-3d4f-4151-8253-97e1109730e8",
+  "activeVersionId": null,
+  "versionCounter": 1,
+  "triggerCount": 0,
+  "sourceWorkflowId": null,
+  "tags": [],
+  "shared": [
+    {
+      "updatedAt": "2026-11-10T20:31:09.409Z",
+      "createdAt": "2026-11-10T20:31:09.409Z",
+      "role": "workflow:owner",
+      "workflowId": "w9U9cbKBJJVuz5vR",
+      "projectId": "zcEt2SWAgqRocx45",
+      "project": {
+        "updatedAt": "2026-11-10T20:24:31.375Z",
+        "createdAt": "2026-11-10T20:23:29.003Z",
+        "id": "zcEt2SWAgqRocx45",
+        "name": "Иван Кунда <kunda_iv_24@mf.grsu.by>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "ce039401-8cc7-4312-81d8-6c1b854b3cc8"
+      }
+    }
+  ],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}
