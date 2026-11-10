@@ -1,0 +1,38 @@
+# Канонический запуск лабораторной №4 (как в методичке).
+#
+# При выполнении работы Docker на машине отсутствовал (нет прав администратора
+# и WSL2), поэтому n8n и Redis запускались нативно — см. lab4/docs/report.md
+# и scripts/. Этот файл сохранён как эквивалентная Docker-конфигурация.
+#
+# Использование:
+#   docker compose up -d
+#   docker compose logs -f n8n
+
+services:
+  n8n:
+    image: n8nio/n8n
+    container_name: n8n
+    restart: unless-stopped
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_HOST=localhost
+      - N8N_PORT=5678
+      - N8N_PROTOCOL=http
+      - GENERIC_TIMEZONE=Europe/Minsk
+      - N8N_DIAGNOSTICS_ENABLED=false
+      - N8N_SECURE_COOKIE=false
+    volumes:
+      - ./n8n_data:/home/node/.n8n
+      - ./n8n_data_files:/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  redis:
+    image: redis:7
+    container_name: redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis-data:/data

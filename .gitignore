@@ -1,0 +1,27 @@
+# n8n runtime data
+n8n_data/
+n8n_data_files/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+
+# Redis dump
+dump.rdb
+appendonly.aof
+redis-data/
+
+# Node
+node_modules/
+npm-debug.log*
+*.log
+
+# OS / editors
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Secrets
+.env
+*.token
