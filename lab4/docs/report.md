@@ -28,11 +28,11 @@ HTTP-запросы к внешнему API и работу с внешним х
 Адрес экземпляра n8n: <http://localhost:5678>, владелец зарегистрирован
 локально (`kunda_iv_24@mf.grsu.by`).
 
-![Главный экран и версия n8n](screenshots/01-version.png)
+![Главный экран и версия n8n](../screenshots/01-version.png)
 
 Список созданных воркфлоу:
 
-![Список воркфлоу](screenshots/00-workflows-list.png)
+![Список воркфлоу](../screenshots/00-workflows-list.png)
 
 ## 3. Отклонение от методички: запуск без Docker
 
@@ -100,9 +100,9 @@ OneDrive: активная SQLite-база внутри OneDrive может бы
 * **Code**: читает данные из Set, пишет их в лог и возвращает объект с полями
   `payload`, `topic`, `student`, `group`, `processed`.
 
-![Канвас flow-01](screenshots/02-manual-set.png)
+![Канвас flow-01](../screenshots/02-manual-set.png)
 
-![Результат flow-01](screenshots/02-manual-set-result.png)
+![Результат flow-01](../screenshots/02-manual-set-result.png)
 
 Результат: `payload = Kunda`, `topic = lab4/kunda/basic`, `group = УИР-241`,
 `processed = true`.
@@ -114,9 +114,9 @@ OneDrive: активная SQLite-база внутри OneDrive может бы
 В узле `Code` использованы: `const`/`let`, массив, объект, цикл `for`,
 конструкция `if/else`, `console.log`. Возвращается объект с полем `payload`.
 
-![Канвас flow-02](screenshots/03-code.png)
+![Канвас flow-02](../screenshots/03-code.png)
 
-![Результат flow-02](screenshots/03-code-result.png)
+![Результат flow-02](../screenshots/03-code-result.png)
 
 Результат: `payload = Kunda`, `attempts = 3`, `status = ok`,
 `normalized = [LAB4/KUNDA/BASIC, LAB4/KUNDA/CODE, LAB4/KUNDA/IF]`.
@@ -129,9 +129,9 @@ OneDrive: активная SQLite-база внутри OneDrive может бы
 Выполнение пошло по ветке **true** (1 item), ветка **false** пуста — это
 видно на скриншоте по зелёной линии и серой ветке.
 
-![Канвас flow-03 и ветвление](screenshots/04-if.png)
+![Канвас flow-03 и ветвление](../screenshots/04-if.png)
 
-![Результат IF](screenshots/04-if-result.png)
+![Результат IF](../screenshots/04-if-result.png)
 
 ### 4.4. Manual Trigger → Set → Code (полный объект сообщения)
 
@@ -141,9 +141,9 @@ OneDrive: активная SQLite-база внутри OneDrive может бы
   `timestamp = {{ $now.toISO() }}`, `payload = "Kunda"`.
 * **Code**: выводит полный объект сообщения и список его полей.
 
-![Канвас flow-04](screenshots/05-set.png)
+![Канвас flow-04](../screenshots/05-set.png)
 
-![Результат flow-04](screenshots/05-set-result.png)
+![Результат flow-04](../screenshots/05-set-result.png)
 
 Результат: `fullMessage = {topic, timestamp, payload}`,
 `fieldNames = [topic, timestamp, payload]`,
@@ -158,9 +158,9 @@ OneDrive: активная SQLite-база внутри OneDrive может бы
 **`https://catfact.ninja/fact`** (без «s»), отдающий JSON вида
 `{"fact": "...", "length": N}`.
 
-![Канвас flow-05](screenshots/06-http.png)
+![Канвас flow-05](../screenshots/06-http.png)
 
-![Результат flow-05](screenshots/06-http-result.png)
+![Результат flow-05](../screenshots/06-http-result.png)
 
 Фактический ответ в момент выполнения:
 `"In one stride, a cheetah can cover 23 to 26 feet (7 to 8 meters)."` (`length = 65`).
@@ -173,9 +173,9 @@ OneDrive: активная SQLite-база внутри OneDrive может бы
 * **Code**: возвращает текущее время (`currentTime`, `localTime`, `timezone`,
   `unix`) и метку группы.
 
-![Канвас flow-06](screenshots/07-schedule.png)
+![Канвас flow-06](../screenshots/07-schedule.png)
 
-![Результат flow-06](screenshots/07-schedule-result.png)
+![Результат flow-06](../screenshots/07-schedule-result.png)
 
 Результат: `currentTime = 2026-11-10T20:37:22.347Z`,
 `localTime = 10.11.2026, 23:37:22`, `timezone = Europe/Minsk`,
@@ -186,9 +186,9 @@ OneDrive: активная SQLite-база внутри OneDrive может бы
 `flow-09-redis.json` — Manual Trigger → Redis (Set) → Redis (Get),
 ключ `kunda`.
 
-![Канвас flow-09](screenshots/08-redis-set-get.png)
+![Канвас flow-09](../screenshots/08-redis-set-get.png)
 
-![Результат чтения](screenshots/08-redis-set-get-result.png)
+![Результат чтения](../screenshots/08-redis-set-get-result.png)
 
 ### 4.8. Redis: удаление и проверка
 
@@ -197,9 +197,9 @@ OneDrive: активная SQLite-база внутри OneDrive может бы
 Операции `EXISTS` в узле Redis нет, поэтому факт удаления проверяется через
 `KEYS` + `Code` (`exists = false`, `keysFound = []`).
 
-![Канвас flow-10](screenshots/09-redis-delete-exists.png)
+![Канвас flow-10](../screenshots/09-redis-delete-exists.png)
 
-![Результат проверки](screenshots/09-redis-delete-exists-result.png)
+![Результат проверки](../screenshots/09-redis-delete-exists-result.png)
 
 Подробное описание работы с Redis — в [redis.md](redis.md).
 
