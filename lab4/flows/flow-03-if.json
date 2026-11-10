@@ -1,0 +1,172 @@
+{
+  "updatedAt": "2026-11-10T20:36:12.649Z",
+  "createdAt": "2026-11-10T20:31:09.406Z",
+  "id": "FNUvlMA4bBmEdWsg",
+  "name": "flow-03-if",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a3000001-0000-4000-8000-000000000001",
+      "name": "When clicking 'Execute workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -112,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "// ЛР4, п.2.3: логика как в п.2.2, результат уходит в IF\nconst payload = 'Kunda';\nconst group = 'УИР-241';\n\nconst checks = ['has_payload', 'group_matches'];\nlet passed = 0;\nfor (let i = 0; i < checks.length; i++) {\n  passed++;\n}\n\nlet status;\nif (payload === 'Kunda' && passed === checks.length) {\n  status = 'ok';\n} else {\n  status = 'mismatch';\n}\n\nreturn {\n  json: {\n    payload,\n    group,\n    status,\n    passed,\n    checks,\n    expected: 'Kunda',\n  },\n};"
+      },
+      "id": "d3000001-0000-4000-8000-000000000001",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        96,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "f3000001-0000-4000-8000-000000000001",
+              "leftValue": "={{ $json.payload }}",
+              "rightValue": "Kunda",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "g3000001-0000-4000-8000-000000000001",
+      "name": "IF payload = Kunda",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        336,
+        304
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "h3000001-0000-4000-8000-000000000001",
+      "name": "NoOp (true)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        608,
+        208
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "i3000001-0000-4000-8000-000000000001",
+      "name": "NoOp (false)",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        608,
+        400
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "IF payload = Kunda",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "IF payload = Kunda": {
+      "main": [
+        [
+          {
+            "node": "NoOp (true)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "NoOp (false)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "ba35836d-c12a-4fa4-9301-27fa624b5974",
+  "activeVersionId": null,
+  "versionCounter": 2,
+  "triggerCount": 0,
+  "sourceWorkflowId": null,
+  "tags": [],
+  "shared": [
+    {
+      "updatedAt": "2026-11-10T20:31:09.407Z",
+      "createdAt": "2026-11-10T20:31:09.407Z",
+      "role": "workflow:owner",
+      "workflowId": "FNUvlMA4bBmEdWsg",
+      "projectId": "zcEt2SWAgqRocx45",
+      "project": {
+        "updatedAt": "2026-11-10T20:24:31.375Z",
+        "createdAt": "2026-11-10T20:23:29.003Z",
+        "id": "zcEt2SWAgqRocx45",
+        "name": "Иван Кунда <kunda_iv_24@mf.grsu.by>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "ce039401-8cc7-4312-81d8-6c1b854b3cc8"
+      }
+    }
+  ],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "updatedAt": "2026-11-10T20:31:09.400Z",
+  "createdAt": "2026-11-10T20:31:09.400Z",
+  "id": "6Gmam9sFuVc8WDZI",
+  "name": "flow-01-manual-set",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a1000001-0000-4000-8000-000000000001",
+      "name": "When clicking 'Execute workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "b1000001-0000-4000-8000-000000000001",
+              "name": "payload",
+              "value": "Kunda",
+              "type": "string"
+            },
+            {
+              "id": "b1000001-0000-4000-8000-000000000002",
+              "name": "topic",
+              "value": "lab4/kunda/basic",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "c1000001-0000-4000-8000-000000000001",
+      "name": "Set payload",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        180,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ЛР4, п.2.1: читаем данные, которые сформировал узел Set\nfor (const item of $input.all()) {\n  console.log('Получено от Set:', JSON.stringify(item.json));\n}\n\nconst first = $input.first().json;\n\nreturn {\n  json: {\n    payload: first.payload,\n    topic: first.topic,\n    student: 'Кунда Иван',\n    group: 'УИР-241',\n    processed: true,\n  },\n};"
+      },
+      "id": "d1000001-0000-4000-8000-000000000001",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        400,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Set payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set payload": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "e67df9dc-340e-43e6-9c94-90abb5f5c1f3",
+  "activeVersionId": null,
+  "versionCounter": 1,
+  "triggerCount": 0,
+  "sourceWorkflowId": null,
+  "tags": [],
+  "shared": [
+    {
+      "updatedAt": "2026-11-10T20:31:09.403Z",
+      "createdAt": "2026-11-10T20:31:09.403Z",
+      "role": "workflow:owner",
+      "workflowId": "6Gmam9sFuVc8WDZI",
+      "projectId": "zcEt2SWAgqRocx45",
+      "project": {
+        "updatedAt": "2026-11-10T20:24:31.375Z",
+        "createdAt": "2026-11-10T20:23:29.003Z",
+        "id": "zcEt2SWAgqRocx45",
+        "name": "Иван Кунда <kunda_iv_24@mf.grsu.by>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "ce039401-8cc7-4312-81d8-6c1b854b3cc8"
+      }
+    }
+  ],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "updatedAt": "2026-11-10T20:31:09.404Z",
+  "createdAt": "2026-11-10T20:31:09.404Z",
+  "id": "7aPHoItzBwJWXvtM",
+  "name": "flow-02-code",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "a2000001-0000-4000-8000-000000000001",
+      "name": "When clicking 'Execute workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -40,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "// ЛР4, п.2.2: демонстрация базового синтаксиса JS\nconst payload = 'Kunda';\nconst group = 'УИР-241';\nlet attempts = 0;\n\n// массив\nconst topics = ['lab4/kunda/basic', 'lab4/kunda/code', 'lab4/kunda/if'];\n\n// цикл for\nconst normalized = [];\nfor (let i = 0; i < topics.length; i++) {\n  normalized.push(topics[i].toUpperCase());\n  attempts++;\n}\n\n// if / else\nlet status;\nif (payload === 'Kunda' && attempts === topics.length) {\n  status = 'ok';\n} else {\n  status = 'mismatch';\n}\n\n// объект\nconst result = {\n  payload,\n  group,\n  attempts,\n  topics,\n  normalized,\n  status,\n};\n\nconsole.log('Результат Code:', JSON.stringify(result));\n\nreturn { json: result };"
+      },
+      "id": "d2000001-0000-4000-8000-000000000001",
+      "name": "Code",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        180,
+        300
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "e2000001-0000-4000-8000-000000000001",
+      "name": "NoOp",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        400,
+        300
+      ]
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute workflow'": {
+      "main": [
+        [
+          {
+            "node": "Code",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code": {
+      "main": [
+        [
+          {
+            "node": "NoOp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": false
+  },
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "5cce8913-e036-4518-9a82-e9855472e337",
+  "activeVersionId": null,
+  "versionCounter": 1,
+  "triggerCount": 0,
+  "sourceWorkflowId": null,
+  "tags": [],
+  "shared": [
+    {
+      "updatedAt": "2026-11-10T20:31:09.405Z",
+      "createdAt": "2026-11-10T20:31:09.405Z",
+      "role": "workflow:owner",
+      "workflowId": "7aPHoItzBwJWXvtM",
+      "projectId": "zcEt2SWAgqRocx45",
+      "project": {
+        "updatedAt": "2026-11-10T20:24:31.375Z",
+        "createdAt": "2026-11-10T20:23:29.003Z",
+        "id": "zcEt2SWAgqRocx45",
+        "name": "Иван Кунда <kunda_iv_24@mf.grsu.by>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "ce039401-8cc7-4312-81d8-6c1b854b3cc8"
+      }
+    }
+  ],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}
