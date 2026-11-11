@@ -33,11 +33,27 @@
 docker compose up -d
 ```
 
-Вариант 2 — без Docker (использован при выполнении работы, см. отчёт):
+Вариант 2 — без Docker (использован при выполнении работы, см. отчёт).
+Нужны **два отдельных окна** — в каждом работает свой сервер, окна закрывать нельзя.
+
+Проще всего — двойным кликом по файлам:
+
+- `scripts\start-redis.cmd`
+- `scripts\start-n8n.cmd`
+
+Либо из PowerShell (в Windows по умолчанию действует политика `Restricted`,
+поэтому нужен флаг `-ExecutionPolicy Bypass`):
 
 ```powershell
-./scripts/start-n8n.ps1
-./scripts/start-redis.ps1
+powershell -ExecutionPolicy Bypass -File .\scripts\start-redis.ps1
+powershell -ExecutionPolicy Bypass -File .\scripts\start-n8n.ps1
 ```
 
-n8n будет доступен по адресу <http://localhost:5678>.
+n8n будет доступен по адресу <http://localhost:5678>, Redis — на `127.0.0.1:6379`.
+Остановка — `Ctrl+C` в окне сервера или закрытие окна.
+
+Параметры скриптов (порты, каталог данных) можно переопределить, например:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\start-n8n.ps1 -Port 5679
+```
