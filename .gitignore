@@ -25,3 +25,7 @@ desktop.ini
 # Secrets
 .env
 *.token
+
+# lab5 local runtime artifacts
+lab5/exports/mail-log.txt
+lab5/exports/debug-otp.*

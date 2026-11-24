@@ -1,0 +1,25 @@
+{
+  "name": "visual-programming-labs-kunda",
+  "version": "1.0.0",
+  "description": "**Студент:** Кунда Иван **Группа:** УИР-241 **Email:** kunda_iv_24@mf.grsu.by",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Taffy-hab/visual-programming-labs-kunda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Taffy-hab/visual-programming-labs-kunda/issues"
+  },
+  "homepage": "https://github.com/Taffy-hab/visual-programming-labs-kunda#readme",
+  "devDependencies": {
+    "playwright": "^1.65.1",
+    "smtp-server": "^3.21.7"
+  }
+}
