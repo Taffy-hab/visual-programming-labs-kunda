@@ -7,5 +7,7 @@
   "builderUrl": "http://localhost:8080",
   "editorUrl": "http://localhost:8080/typebots/cmwv249ca0003vgf7b74kla2e/edit",
   "apiToken": "6k8yfm13-hSQnG-M7pverBknLpZ01XHToIsmW_c0bU4",
-  "authState": "C:\\Users\\kakah\\AppData\\Local\\Temp\\typebot-auth-state.json"
+  "authState": "C:\\Users\\kakah\\AppData\\Local\\Temp\\typebot-auth-state.json",
+  "publicId": "kunda-lab5-sdp-uir-241",
+  "viewerUrl": "http://127.0.0.1:8081/kunda-lab5-sdp-uir-241"
 }

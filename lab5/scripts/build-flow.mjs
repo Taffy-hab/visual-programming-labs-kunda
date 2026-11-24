@@ -12,6 +12,8 @@ const meta = JSON.parse(fs.readFileSync(path.join(exportsDir, 'meta.json'), 'utf
 const BUILDER = meta.builderUrl || 'http://localhost:8080';
 const GROUP = 'СДП-УИР-241';
 const WEBHOOK_URL = process.env.WEBHOOK_URL || 'http://localhost:7788/typebot-event';
+const PUBLIC_ID = process.env.LAB_PUBLIC_ID || 'kunda-lab5-sdp-uir-241';
+const VIEWER_URL = process.env.VIEWER_URL || 'http://127.0.0.1:8081';
 
 const id = () => randomUUID();
 const text = (html) => ({
@@ -140,6 +142,7 @@ const flow = {
   version: '6.1',
   id: meta.typebotId,
   name: meta.typebotName,
+  publicId: PUBLIC_ID,
   workspaceId: meta.workspaceId,
   icon: null,
   folderId: null,
@@ -214,6 +217,7 @@ const getText = await getRes.text();
 if (!getRes.ok) throw new Error(`GET failed ${getRes.status}: ${getText.slice(0, 800)}`);
 const saved = JSON.parse(getText).typebot || JSON.parse(getText);
 fs.writeFileSync(path.join(exportsDir, 'flow-01-Kunda-typebot.json'), JSON.stringify(saved, null, 2), 'utf8');
-meta.publicId = saved.publicId;
+meta.publicId = saved.publicId || PUBLIC_ID;
+meta.viewerUrl = `${VIEWER_URL}/${meta.publicId}`;
 fs.writeFileSync(path.join(exportsDir, 'meta.json'), JSON.stringify(meta, null, 2), 'utf8');
-console.log('✓ flow saved; publicId =', saved.publicId);
+console.log('✓ flow saved; publicId =', meta.publicId, '; viewer =', meta.viewerUrl);
