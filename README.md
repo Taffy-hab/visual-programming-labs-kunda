@@ -12,6 +12,15 @@
 |--------|------|--------|
 | Лабораторная №4 | Автоматизация бизнес-процессов в n8n: базовые узлы и Redis | [lab4/docs/report.md](lab4/docs/report.md) |
 | Лабораторная №5 | Чат-боты: TypeBot self-hosted | [lab5/docs/report.md](lab5/docs/report.md) |
+| Лабораторная №6 | Kodular: «Приветствие» и ачивка «Камера» | [lab6/docs/report.md](lab6/docs/report.md) |
+
+## Лабораторная работа №6
+
+Приложение «Приветствие» в Kodular: ввод имени, проверка пустого поля через
+`if/else`, соединение строк через `text_join` и фамилия `Kunda` на экране.
+Реализована ачивка 13 — «Камера»: `Camera1.TakePicture` → `AfterPicture` →
+`Image1.Picture`. Экспорт проекта — [`lab6/exports/lab6-kunda.aia`](lab6/exports/lab6-kunda.aia),
+скриншоты — в `lab6/screenshots/`.
 
 ## Лабораторная работа №4
 
