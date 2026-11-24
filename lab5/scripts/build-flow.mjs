@@ -148,7 +148,7 @@ const flow = {
   folderId: null,
   events: [
     { id: startEventId, outgoingEdgeId: edge({ eventId: startEventId }, gWelcome, blocks.welcome.id), graphCoordinates: { x: 0, y: 0 }, type: 'start' },
-    { id: replyEventId, outgoingEdgeId: edge({ eventId: replyEventId }, gFallback, blocks.fallback.id), graphCoordinates: { x: 1040, y: 620 }, type: 'reply' },
+    { id: replyEventId, outgoingEdgeId: edge({ eventId: replyEventId }, gFallback, blocks.fallback.id), graphCoordinates: { x: 1040, y: 620 }, type: 'invalidReply' },
   ],
   groups,
   edges,

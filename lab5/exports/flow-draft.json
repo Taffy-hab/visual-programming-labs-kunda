@@ -8,8 +8,8 @@
   "folderId": null,
   "events": [
     {
-      "id": "9c734524-f0dc-4566-b854-ad6a6e8d4885",
-      "outgoingEdgeId": "59aa49b5-5c3a-4ddb-8096-422eeb15f07e",
+      "id": "b521fafb-a231-404e-8beb-25821c1f0ae1",
+      "outgoingEdgeId": "685652b8-b4bb-4af1-816a-f7c7586ea431",
       "graphCoordinates": {
         "x": 0,
         "y": 0
@@ -17,18 +17,18 @@
       "type": "start"
     },
     {
-      "id": "a7effb5f-df92-4592-9905-6b554d9fdc76",
-      "outgoingEdgeId": "229bf3bc-94d0-42bd-a25c-6fa110a05186",
+      "id": "b5149618-28b7-4415-9767-943efa1fb87f",
+      "outgoingEdgeId": "14e0dc42-47c7-4136-ae5e-193b2088bf8e",
       "graphCoordinates": {
         "x": 1040,
         "y": 620
       },
-      "type": "reply"
+      "type": "invalidReply"
     }
   ],
   "groups": [
     {
-      "id": "93459291-55b2-4710-b49b-870498ae7a38",
+      "id": "9fb2ce81-520c-43c9-a2ff-683d6e5c7e70",
       "title": "Приветствие",
       "graphCoordinates": {
         "x": 0,
@@ -36,7 +36,7 @@
       },
       "blocks": [
         {
-          "id": "8b7f39f1-9dcd-4223-8f18-e5d67c086663",
+          "id": "d104c088-a50c-42ee-a885-510cc0f9b75b",
           "type": "text",
           "content": {
             "html": "Здравствуйте! Я бот лабораторной работы №5, фамилия Кунда, группа СДП-УИР-241",
@@ -52,12 +52,12 @@
               }
             ]
           },
-          "outgoingEdgeId": "21ad85b7-d93a-4268-8bc8-ca44ce07fab7"
+          "outgoingEdgeId": "d9d85838-6083-4e0c-8154-547f82ade757"
         }
       ]
     },
     {
-      "id": "e76e3e7d-1cb6-474d-b0ea-d3fc2f27221e",
+      "id": "3be5021f-7bdf-49a1-b35b-39bfebe9b68a",
       "title": "Сбор имени",
       "graphCoordinates": {
         "x": 320,
@@ -65,7 +65,7 @@
       },
       "blocks": [
         {
-          "id": "6e692bd2-63d3-41bd-b09a-8e2deacca898",
+          "id": "4f99d951-97b6-43c9-8e6a-c5a3147ff8a6",
           "type": "text",
           "content": {
             "html": "Как вас зовут?",
@@ -81,24 +81,24 @@
               }
             ]
           },
-          "outgoingEdgeId": "06997b3c-2e9b-4c65-808c-ec8705f8982d"
+          "outgoingEdgeId": "04ff17f6-d686-48a6-beff-268b0f815d21"
         },
         {
-          "id": "23069ac4-7bd8-4f4b-8d14-c21d7e7327cc",
+          "id": "5ab299f9-ad6c-4359-940d-6d494bf54b1e",
           "type": "text input",
           "options": {
-            "variableId": "58e4fcf1-6138-4b93-a8eb-1e384f5178a1",
+            "variableId": "d93cacc3-74d2-40cc-995f-df614d9dd45d",
             "labels": {
               "placeholder": "Введите имя",
               "button": "Отправить"
             }
           },
-          "outgoingEdgeId": "706786f6-32fc-43af-b8b6-07ec06e96919"
+          "outgoingEdgeId": "cc28e117-0177-4ef8-9e8c-315315e0c91c"
         }
       ]
     },
     {
-      "id": "626824c6-f231-452b-982d-cc875536a41d",
+      "id": "ac5c8555-6cbb-4512-9233-fb6b64ec4cd4",
       "title": "Сбор группы",
       "graphCoordinates": {
         "x": 680,
@@ -106,7 +106,7 @@
       },
       "blocks": [
         {
-          "id": "04acb242-a086-4443-b707-15070ef4ab5e",
+          "id": "5bc53e5f-86b8-4dfa-abd6-d2be84f5cda7",
           "type": "text",
           "content": {
             "html": "Ваша группа",
@@ -122,24 +122,24 @@
               }
             ]
           },
-          "outgoingEdgeId": "634b070d-3c28-4065-8a15-693ca2589bc5"
+          "outgoingEdgeId": "51fa8f34-05ac-4428-96c8-93cde81c17aa"
         },
         {
-          "id": "69d6356a-2cc5-4c2b-8e9a-960c3d96dcae",
+          "id": "a249ecfb-ddf1-4b54-8a46-baf97c34bb8e",
           "type": "text input",
           "options": {
-            "variableId": "435c82b0-9303-4af5-b869-0973b447632e",
+            "variableId": "d8d87eb3-3ab9-4d63-8316-b11363f30bf6",
             "labels": {
               "placeholder": "Например, СДП-УИР-241",
               "button": "Отправить"
             }
           },
-          "outgoingEdgeId": "19fb7402-f927-4fa5-af89-48c16a1ebcc3"
+          "outgoingEdgeId": "bba6fce6-2a6f-4a5c-8d18-097b5c48e269"
         }
       ]
     },
     {
-      "id": "466ade31-ae1a-4fbb-a833-e687696dc225",
+      "id": "78cf6288-f0d4-4c09-9424-7227474ba6d4",
       "title": "Условие группы",
       "graphCoordinates": {
         "x": 1040,
@@ -147,46 +147,46 @@
       },
       "blocks": [
         {
-          "id": "141e395b-e041-4e2b-ab5b-9819882dd173",
+          "id": "beff12c6-faa3-4c39-bbaa-dbb6b0d44d02",
           "type": "Condition",
           "items": [
             {
-              "id": "49162813-0be2-448a-aa8a-bb75433bfd86",
+              "id": "f59bd104-718c-4d89-9038-3b5b5fa7f8fc",
               "content": {
                 "logicalOperator": "AND",
                 "comparisons": [
                   {
-                    "id": "58736302-3191-4bdc-aeb0-dcd60a7e3a45",
-                    "variableId": "435c82b0-9303-4af5-b869-0973b447632e",
+                    "id": "f6fb654a-9622-4ce5-b664-b95930cb59eb",
+                    "variableId": "d8d87eb3-3ab9-4d63-8316-b11363f30bf6",
                     "comparisonOperator": "Equal to",
                     "value": "СДП-УИР-241"
                   }
                 ]
               },
-              "outgoingEdgeId": "7b6a4f86-38b1-467d-9ca5-2185c2e88a94"
+              "outgoingEdgeId": "27d3ee23-3e64-430b-9e69-007cb1467582"
             },
             {
-              "id": "59ceac8d-bf2f-46c4-ab87-613b9df400fd",
+              "id": "6e2a8ae7-4a45-4ae2-bced-4c7d93f502a0",
               "content": {
                 "logicalOperator": "AND",
                 "comparisons": [
                   {
-                    "id": "d10d324f-14e9-41fe-b405-fcca6ecd9f2a",
-                    "variableId": "435c82b0-9303-4af5-b869-0973b447632e",
+                    "id": "6484b6f1-06f2-4a48-8e65-1cc87408bc6d",
+                    "variableId": "d8d87eb3-3ab9-4d63-8316-b11363f30bf6",
                     "comparisonOperator": "Not equal",
                     "value": "СДП-УИР-241"
                   }
                 ]
               },
-              "outgoingEdgeId": "0d2ec17e-a8ec-4f36-a522-619ed1c87a93"
+              "outgoingEdgeId": "b83d093c-c562-4d50-86b3-6d4ecb3a47dd"
             }
           ],
-          "outgoingEdgeId": "0eda897e-dc3b-44fa-9033-0d4b14399774"
+          "outgoingEdgeId": "40fc1158-6f5b-4898-b3bd-1c76aee555bb"
         }
       ]
     },
     {
-      "id": "1ee83a47-3fa7-4f42-a3f7-4c02384660b6",
+      "id": "8bc21e02-d8b0-4606-866e-30214f348694",
       "title": "Ветка «свой»",
       "graphCoordinates": {
         "x": 1400,
@@ -194,7 +194,7 @@
       },
       "blocks": [
         {
-          "id": "303240cc-94ac-4d6d-bc35-99441acc86da",
+          "id": "e69004c9-1846-484e-86ec-d7f3e78cf12b",
           "type": "text",
           "content": {
             "html": "Свой! Привет, {{user_name}}, ты из группы СДП-УИР-241. Отправляю событие в локальный webhook.",
@@ -210,10 +210,10 @@
               }
             ]
           },
-          "outgoingEdgeId": "369a2ff9-e028-4245-ae13-4c2e95525adc"
+          "outgoingEdgeId": "81bfb1f0-d145-4245-9a2f-4e59190efb0f"
         },
         {
-          "id": "fc7ef989-265d-4a1f-b537-a9017ccf1b64",
+          "id": "e0a71b7d-f25e-4867-b298-d929e865c26e",
           "type": "Webhook",
           "options": {
             "variablesForTest": [],
@@ -229,28 +229,28 @@
               "queryParams": [],
               "headers": [
                 {
-                  "id": "6e64bfc8-2f33-4f14-9d2a-77d268af636f",
+                  "id": "e67003d7-6aa9-4bd7-9eef-d1179f018d0c",
                   "key": "Content-Type",
                   "value": "application/json"
                 }
               ]
             }
           },
-          "outgoingEdgeId": "d71048c1-3782-482b-b506-4e653c3e37f3"
+          "outgoingEdgeId": "3024f906-f689-4830-9f75-e5c0c3f7694e"
         },
         {
-          "id": "89029d98-5af7-475c-981d-d5f22359a868",
+          "id": "da048690-ad1a-4f0f-821a-d2c07d01e69a",
           "type": "choice input",
           "items": [
             {
-              "id": "e00fc508-9246-472f-8084-e079a393821e",
+              "id": "2da08af8-07dd-4b8d-ae7e-827f2c27bf63",
               "content": "Задать вопрос",
-              "outgoingEdgeId": "f8c37c56-b94a-47cd-ace0-fd585f9f84ba"
+              "outgoingEdgeId": "7506cb7b-05cd-41b2-b6e1-a0ffb66d47a2"
             },
             {
-              "id": "1398ae1a-7947-4586-b6b3-92d26d764a29",
+              "id": "b97d1d54-6177-4e49-8991-0e2e23ce177f",
               "content": "Связаться с админом",
-              "outgoingEdgeId": "a520d517-6766-402d-9b4a-ce637ef30fb4"
+              "outgoingEdgeId": "b68a3e77-129f-4202-860e-8fee1e9d32c8"
             }
           ],
           "options": {
@@ -260,7 +260,7 @@
       ]
     },
     {
-      "id": "57397cef-a32d-4cbe-bfdc-0545cfa05f98",
+      "id": "c2648462-ecb7-41d7-b060-46c11f187889",
       "title": "Ветка «чужой»",
       "graphCoordinates": {
         "x": 1400,
@@ -268,7 +268,7 @@
       },
       "blocks": [
         {
-          "id": "6106bde5-6597-4e47-a6b1-92a3303ed737",
+          "id": "60c4c748-ecdd-4764-afbd-fddb113963b7",
           "type": "text",
           "content": {
             "html": "Привет, {{user_name}}! Ты из группы {{user_group}} — это не СДП-УИР-241, поэтому ветка «чужой».",
@@ -284,21 +284,21 @@
               }
             ]
           },
-          "outgoingEdgeId": "3551114b-000e-40d3-ba36-42f2286491ad"
+          "outgoingEdgeId": "37e5ce76-0294-4a37-b1ea-770013d8f8bd"
         },
         {
-          "id": "539a4088-0134-4255-83e4-62dfc5508296",
+          "id": "3a8c96e3-662e-4d38-9d64-c18e4b1d3773",
           "type": "choice input",
           "items": [
             {
-              "id": "229635e4-f297-4773-aed3-06ac299fb34b",
+              "id": "379a2197-0762-468d-aeac-ea64f9d59ba9",
               "content": "Задать вопрос",
-              "outgoingEdgeId": "70982210-0f6a-4100-9a0f-019ff9de7dd8"
+              "outgoingEdgeId": "751c7066-a241-4c72-b4b3-eaa479bd69a7"
             },
             {
-              "id": "b676e50a-5bca-4cc2-b06f-4201b56d10a4",
+              "id": "7badd369-3259-446b-bee6-ef08e9dddea6",
               "content": "Связаться с админом",
-              "outgoingEdgeId": "1b87ab54-7234-482c-8c57-a0957f436250"
+              "outgoingEdgeId": "c0a5aaeb-3068-4736-9683-f05c13e4ee9a"
             }
           ],
           "options": {
@@ -308,7 +308,7 @@
       ]
     },
     {
-      "id": "2dc61767-0f8f-4923-a231-6007f4c70b49",
+      "id": "5bf7c828-a4a0-4a1c-869f-53da0d3c893d",
       "title": "Вопрос",
       "graphCoordinates": {
         "x": 1780,
@@ -316,7 +316,7 @@
       },
       "blocks": [
         {
-          "id": "ab6fcfe5-05ca-4b5b-98ef-3004b8c10281",
+          "id": "1206d5f9-88c3-43ca-a146-6bd4462c7855",
           "type": "text",
           "content": {
             "html": "Напишите ваш вопрос — я передам его преподавателю.",
@@ -336,7 +336,7 @@
       ]
     },
     {
-      "id": "1decf118-a4b0-4bca-a371-fb0765fd5d3c",
+      "id": "b3ecd646-ad69-4692-b14b-35b9e4b13b5a",
       "title": "Админ",
       "graphCoordinates": {
         "x": 1780,
@@ -344,7 +344,7 @@
       },
       "blocks": [
         {
-          "id": "403905ac-beae-4ce0-93b8-a055bb154639",
+          "id": "bbcc29df-3ed3-4066-ae0d-273c16e1ed66",
           "type": "text",
           "content": {
             "html": "Связаться с админом: lab5-kunda@local.test",
@@ -364,7 +364,7 @@
       ]
     },
     {
-      "id": "2f8bfd5a-babc-4c80-8f8b-8a16f6a1930f",
+      "id": "8a58f449-2085-4a39-a766-28b87bf4b57a",
       "title": "Fallback",
       "graphCoordinates": {
         "x": 1040,
@@ -372,7 +372,7 @@
       },
       "blocks": [
         {
-          "id": "05107126-60f7-431f-879c-40857a5971a1",
+          "id": "531a062d-12cf-46b0-b1cf-d292595a6c16",
           "type": "text",
           "content": {
             "html": "Извините, я не понял ввод. Пожалуйста, начните диалог заново и укажите имя и группу.",
@@ -394,190 +394,190 @@
   ],
   "edges": [
     {
-      "id": "21ad85b7-d93a-4268-8bc8-ca44ce07fab7",
+      "id": "d9d85838-6083-4e0c-8154-547f82ade757",
       "from": {
-        "blockId": "8b7f39f1-9dcd-4223-8f18-e5d67c086663"
+        "blockId": "d104c088-a50c-42ee-a885-510cc0f9b75b"
       },
       "to": {
-        "groupId": "e76e3e7d-1cb6-474d-b0ea-d3fc2f27221e",
-        "blockId": "6e692bd2-63d3-41bd-b09a-8e2deacca898"
+        "groupId": "3be5021f-7bdf-49a1-b35b-39bfebe9b68a",
+        "blockId": "4f99d951-97b6-43c9-8e6a-c5a3147ff8a6"
       }
     },
     {
-      "id": "06997b3c-2e9b-4c65-808c-ec8705f8982d",
+      "id": "04ff17f6-d686-48a6-beff-268b0f815d21",
       "from": {
-        "blockId": "6e692bd2-63d3-41bd-b09a-8e2deacca898"
+        "blockId": "4f99d951-97b6-43c9-8e6a-c5a3147ff8a6"
       },
       "to": {
-        "groupId": "e76e3e7d-1cb6-474d-b0ea-d3fc2f27221e",
-        "blockId": "23069ac4-7bd8-4f4b-8d14-c21d7e7327cc"
+        "groupId": "3be5021f-7bdf-49a1-b35b-39bfebe9b68a",
+        "blockId": "5ab299f9-ad6c-4359-940d-6d494bf54b1e"
       }
     },
     {
-      "id": "706786f6-32fc-43af-b8b6-07ec06e96919",
+      "id": "cc28e117-0177-4ef8-9e8c-315315e0c91c",
       "from": {
-        "blockId": "23069ac4-7bd8-4f4b-8d14-c21d7e7327cc"
+        "blockId": "5ab299f9-ad6c-4359-940d-6d494bf54b1e"
       },
       "to": {
-        "groupId": "626824c6-f231-452b-982d-cc875536a41d",
-        "blockId": "04acb242-a086-4443-b707-15070ef4ab5e"
+        "groupId": "ac5c8555-6cbb-4512-9233-fb6b64ec4cd4",
+        "blockId": "5bc53e5f-86b8-4dfa-abd6-d2be84f5cda7"
       }
     },
     {
-      "id": "634b070d-3c28-4065-8a15-693ca2589bc5",
+      "id": "51fa8f34-05ac-4428-96c8-93cde81c17aa",
       "from": {
-        "blockId": "04acb242-a086-4443-b707-15070ef4ab5e"
+        "blockId": "5bc53e5f-86b8-4dfa-abd6-d2be84f5cda7"
       },
       "to": {
-        "groupId": "626824c6-f231-452b-982d-cc875536a41d",
-        "blockId": "69d6356a-2cc5-4c2b-8e9a-960c3d96dcae"
+        "groupId": "ac5c8555-6cbb-4512-9233-fb6b64ec4cd4",
+        "blockId": "a249ecfb-ddf1-4b54-8a46-baf97c34bb8e"
       }
     },
     {
-      "id": "19fb7402-f927-4fa5-af89-48c16a1ebcc3",
+      "id": "bba6fce6-2a6f-4a5c-8d18-097b5c48e269",
       "from": {
-        "blockId": "69d6356a-2cc5-4c2b-8e9a-960c3d96dcae"
+        "blockId": "a249ecfb-ddf1-4b54-8a46-baf97c34bb8e"
       },
       "to": {
-        "groupId": "466ade31-ae1a-4fbb-a833-e687696dc225",
-        "blockId": "141e395b-e041-4e2b-ab5b-9819882dd173"
+        "groupId": "78cf6288-f0d4-4c09-9424-7227474ba6d4",
+        "blockId": "beff12c6-faa3-4c39-bbaa-dbb6b0d44d02"
       }
     },
     {
-      "id": "369a2ff9-e028-4245-ae13-4c2e95525adc",
+      "id": "81bfb1f0-d145-4245-9a2f-4e59190efb0f",
       "from": {
-        "blockId": "303240cc-94ac-4d6d-bc35-99441acc86da"
+        "blockId": "e69004c9-1846-484e-86ec-d7f3e78cf12b"
       },
       "to": {
-        "groupId": "1ee83a47-3fa7-4f42-a3f7-4c02384660b6",
-        "blockId": "fc7ef989-265d-4a1f-b537-a9017ccf1b64"
+        "groupId": "8bc21e02-d8b0-4606-866e-30214f348694",
+        "blockId": "e0a71b7d-f25e-4867-b298-d929e865c26e"
       }
     },
     {
-      "id": "d71048c1-3782-482b-b506-4e653c3e37f3",
+      "id": "3024f906-f689-4830-9f75-e5c0c3f7694e",
       "from": {
-        "blockId": "fc7ef989-265d-4a1f-b537-a9017ccf1b64"
+        "blockId": "e0a71b7d-f25e-4867-b298-d929e865c26e"
       },
       "to": {
-        "groupId": "1ee83a47-3fa7-4f42-a3f7-4c02384660b6",
-        "blockId": "89029d98-5af7-475c-981d-d5f22359a868"
+        "groupId": "8bc21e02-d8b0-4606-866e-30214f348694",
+        "blockId": "da048690-ad1a-4f0f-821a-d2c07d01e69a"
       }
     },
     {
-      "id": "3551114b-000e-40d3-ba36-42f2286491ad",
+      "id": "37e5ce76-0294-4a37-b1ea-770013d8f8bd",
       "from": {
-        "blockId": "6106bde5-6597-4e47-a6b1-92a3303ed737"
+        "blockId": "60c4c748-ecdd-4764-afbd-fddb113963b7"
       },
       "to": {
-        "groupId": "57397cef-a32d-4cbe-bfdc-0545cfa05f98",
-        "blockId": "539a4088-0134-4255-83e4-62dfc5508296"
+        "groupId": "c2648462-ecb7-41d7-b060-46c11f187889",
+        "blockId": "3a8c96e3-662e-4d38-9d64-c18e4b1d3773"
       }
     },
     {
-      "id": "7b6a4f86-38b1-467d-9ca5-2185c2e88a94",
+      "id": "27d3ee23-3e64-430b-9e69-007cb1467582",
       "from": {
-        "blockId": "141e395b-e041-4e2b-ab5b-9819882dd173",
-        "itemId": "49162813-0be2-448a-aa8a-bb75433bfd86"
+        "blockId": "beff12c6-faa3-4c39-bbaa-dbb6b0d44d02",
+        "itemId": "f59bd104-718c-4d89-9038-3b5b5fa7f8fc"
       },
       "to": {
-        "groupId": "1ee83a47-3fa7-4f42-a3f7-4c02384660b6",
-        "blockId": "303240cc-94ac-4d6d-bc35-99441acc86da"
+        "groupId": "8bc21e02-d8b0-4606-866e-30214f348694",
+        "blockId": "e69004c9-1846-484e-86ec-d7f3e78cf12b"
       }
     },
     {
-      "id": "0d2ec17e-a8ec-4f36-a522-619ed1c87a93",
+      "id": "b83d093c-c562-4d50-86b3-6d4ecb3a47dd",
       "from": {
-        "blockId": "141e395b-e041-4e2b-ab5b-9819882dd173",
-        "itemId": "59ceac8d-bf2f-46c4-ab87-613b9df400fd"
+        "blockId": "beff12c6-faa3-4c39-bbaa-dbb6b0d44d02",
+        "itemId": "6e2a8ae7-4a45-4ae2-bced-4c7d93f502a0"
       },
       "to": {
-        "groupId": "57397cef-a32d-4cbe-bfdc-0545cfa05f98",
-        "blockId": "6106bde5-6597-4e47-a6b1-92a3303ed737"
+        "groupId": "c2648462-ecb7-41d7-b060-46c11f187889",
+        "blockId": "60c4c748-ecdd-4764-afbd-fddb113963b7"
       }
     },
     {
-      "id": "0eda897e-dc3b-44fa-9033-0d4b14399774",
+      "id": "40fc1158-6f5b-4898-b3bd-1c76aee555bb",
       "from": {
-        "blockId": "141e395b-e041-4e2b-ab5b-9819882dd173"
+        "blockId": "beff12c6-faa3-4c39-bbaa-dbb6b0d44d02"
       },
       "to": {
-        "groupId": "57397cef-a32d-4cbe-bfdc-0545cfa05f98",
-        "blockId": "6106bde5-6597-4e47-a6b1-92a3303ed737"
+        "groupId": "c2648462-ecb7-41d7-b060-46c11f187889",
+        "blockId": "60c4c748-ecdd-4764-afbd-fddb113963b7"
       }
     },
     {
-      "id": "f8c37c56-b94a-47cd-ace0-fd585f9f84ba",
+      "id": "7506cb7b-05cd-41b2-b6e1-a0ffb66d47a2",
       "from": {
-        "blockId": "89029d98-5af7-475c-981d-d5f22359a868",
-        "itemId": "e00fc508-9246-472f-8084-e079a393821e"
+        "blockId": "da048690-ad1a-4f0f-821a-d2c07d01e69a",
+        "itemId": "2da08af8-07dd-4b8d-ae7e-827f2c27bf63"
       },
       "to": {
-        "groupId": "2dc61767-0f8f-4923-a231-6007f4c70b49",
-        "blockId": "ab6fcfe5-05ca-4b5b-98ef-3004b8c10281"
+        "groupId": "5bf7c828-a4a0-4a1c-869f-53da0d3c893d",
+        "blockId": "1206d5f9-88c3-43ca-a146-6bd4462c7855"
       }
     },
     {
-      "id": "a520d517-6766-402d-9b4a-ce637ef30fb4",
+      "id": "b68a3e77-129f-4202-860e-8fee1e9d32c8",
       "from": {
-        "blockId": "89029d98-5af7-475c-981d-d5f22359a868",
-        "itemId": "1398ae1a-7947-4586-b6b3-92d26d764a29"
+        "blockId": "da048690-ad1a-4f0f-821a-d2c07d01e69a",
+        "itemId": "b97d1d54-6177-4e49-8991-0e2e23ce177f"
       },
       "to": {
-        "groupId": "1decf118-a4b0-4bca-a371-fb0765fd5d3c",
-        "blockId": "403905ac-beae-4ce0-93b8-a055bb154639"
+        "groupId": "b3ecd646-ad69-4692-b14b-35b9e4b13b5a",
+        "blockId": "bbcc29df-3ed3-4066-ae0d-273c16e1ed66"
       }
     },
     {
-      "id": "70982210-0f6a-4100-9a0f-019ff9de7dd8",
+      "id": "751c7066-a241-4c72-b4b3-eaa479bd69a7",
       "from": {
-        "blockId": "539a4088-0134-4255-83e4-62dfc5508296",
-        "itemId": "229635e4-f297-4773-aed3-06ac299fb34b"
+        "blockId": "3a8c96e3-662e-4d38-9d64-c18e4b1d3773",
+        "itemId": "379a2197-0762-468d-aeac-ea64f9d59ba9"
       },
       "to": {
-        "groupId": "2dc61767-0f8f-4923-a231-6007f4c70b49",
-        "blockId": "ab6fcfe5-05ca-4b5b-98ef-3004b8c10281"
+        "groupId": "5bf7c828-a4a0-4a1c-869f-53da0d3c893d",
+        "blockId": "1206d5f9-88c3-43ca-a146-6bd4462c7855"
       }
     },
     {
-      "id": "1b87ab54-7234-482c-8c57-a0957f436250",
+      "id": "c0a5aaeb-3068-4736-9683-f05c13e4ee9a",
       "from": {
-        "blockId": "539a4088-0134-4255-83e4-62dfc5508296",
-        "itemId": "b676e50a-5bca-4cc2-b06f-4201b56d10a4"
+        "blockId": "3a8c96e3-662e-4d38-9d64-c18e4b1d3773",
+        "itemId": "7badd369-3259-446b-bee6-ef08e9dddea6"
       },
       "to": {
-        "groupId": "1decf118-a4b0-4bca-a371-fb0765fd5d3c",
-        "blockId": "403905ac-beae-4ce0-93b8-a055bb154639"
+        "groupId": "b3ecd646-ad69-4692-b14b-35b9e4b13b5a",
+        "blockId": "bbcc29df-3ed3-4066-ae0d-273c16e1ed66"
       }
     },
     {
-      "id": "59aa49b5-5c3a-4ddb-8096-422eeb15f07e",
+      "id": "685652b8-b4bb-4af1-816a-f7c7586ea431",
       "from": {
-        "eventId": "9c734524-f0dc-4566-b854-ad6a6e8d4885"
+        "eventId": "b521fafb-a231-404e-8beb-25821c1f0ae1"
       },
       "to": {
-        "groupId": "93459291-55b2-4710-b49b-870498ae7a38",
-        "blockId": "8b7f39f1-9dcd-4223-8f18-e5d67c086663"
+        "groupId": "9fb2ce81-520c-43c9-a2ff-683d6e5c7e70",
+        "blockId": "d104c088-a50c-42ee-a885-510cc0f9b75b"
       }
     },
     {
-      "id": "229bf3bc-94d0-42bd-a25c-6fa110a05186",
+      "id": "14e0dc42-47c7-4136-ae5e-193b2088bf8e",
       "from": {
-        "eventId": "a7effb5f-df92-4592-9905-6b554d9fdc76"
+        "eventId": "b5149618-28b7-4415-9767-943efa1fb87f"
       },
       "to": {
-        "groupId": "2f8bfd5a-babc-4c80-8f8b-8a16f6a1930f",
-        "blockId": "05107126-60f7-431f-879c-40857a5971a1"
+        "groupId": "8a58f449-2085-4a39-a766-28b87bf4b57a",
+        "blockId": "531a062d-12cf-46b0-b1cf-d292595a6c16"
       }
     }
   ],
   "variables": [
     {
-      "id": "58e4fcf1-6138-4b93-a8eb-1e384f5178a1",
+      "id": "d93cacc3-74d2-40cc-995f-df614d9dd45d",
       "name": "user_name",
       "isSessionVariable": true
     },
     {
-      "id": "435c82b0-9303-4af5-b869-0973b447632e",
+      "id": "d8d87eb3-3ab9-4d63-8316-b11363f30bf6",
       "name": "user_group",
       "isSessionVariable": true
     }

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const meta = JSON.parse(fs.readFileSync(path.join(root, 'exports/meta.json'), 'utf8'));
-const VIEWER = process.env.VIEWER_URL || 'http://localhost:8081';
+const VIEWER = process.env.VIEWER_URL || 'http://127.0.0.1:8081';
 const shots = path.join(root, 'screenshots');
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const shot = async (page, name) => {
